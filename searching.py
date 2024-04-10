@@ -39,10 +39,13 @@ def linear_search(sequence, number):
 def pattern_search(sequence, pattern):
     indexes = []
     for i in range(len(sequence) - len(pattern) + 1):
-        if sequence[i:i+len(pattern)] == pattern:
+        index = 0
+        while index < len(pattern):
+            if sequence[i + index] != pattern[index]:
+                break
+            index += 1
+        if index == len(pattern):
             indexes.append(int(i + 0.5 * len(pattern) - 0.5))
-        else:
-            continue
     result = set(indexes)
     return result
 
