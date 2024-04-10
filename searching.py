@@ -40,7 +40,7 @@ def pattern_search(sequence, pattern):
     indexes = []
     for i in range(len(sequence) - len(pattern) + 1):
         if sequence[i:i+len(pattern)] == pattern:
-            indexes.append(i + int(0.5 * len(pattern)))
+            indexes.append(int(i + 0.5 * len(pattern) - 0.5))
         else:
             continue
     result = set(indexes)
